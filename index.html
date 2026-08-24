@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Vermelho e Preto - CR Flamengo</title>
+    <title>Almanaque Rubro-Negro - CR Flamengo</title>
 
     <style>
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +19,7 @@
             color: #ffffff;
         }
 
+        /* Cabeçalho Rubro-Negro */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -39,44 +41,44 @@
             font-size: 1.1rem;
         }
 
-        /* Estilo das Seções e Categorias */
+        /* Container Principal */
+        .main-container {
+            padding: 40px 20px;
+        }
+
+        /* --- ESTILOS DAS CATEGORIAS --- */
         .category-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto 50px auto; /* Espaço embaixo de cada categoria */
         }
 
         .category-title {
             color: #c1121f;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
-            border-left: 5px solid #c1121f;
-            padding-left: 15px;
+            border-left: 4px solid #c1121f;
+            padding-left: 12px;
             margin-bottom: 20px;
-            letter-spacing: 1px;
         }
 
-        /* Container dos Cards em Flexbox */
+        /* Layout em Flexbox para os cards da categoria */
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            justify-content: flex-start;
+            justify-content: center;
+            gap: 30px;
         }
 
-        /* Card Individual */
+        /* Card individual */
         .card {
             background-color: #1a1a1a;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            width: calc(33.333% - 17px);
-            min-width: 280px;
+            width: 300px;
             border: 1px solid #333;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .card:hover {
@@ -84,24 +86,22 @@
             box-shadow: 0 10px 20px rgba(193, 18, 31, 0.3);
         }
 
+        /* Imagens */
         .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
+        /* Conteúdo do Card */
         .card-content {
             padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .card-content h3 {
             margin-bottom: 10px;
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .card-content p {
@@ -132,23 +132,11 @@
             background-color: #c1121f;
         }
 
+        /* Estado quando o botão for curtido */
         .like-btn.liked {
             background-color: #c1121f;
             color: #ffffff;
             box-shadow: 0 0 10px rgba(193, 18, 31, 0.8);
-        }
-
-        /* Responsividade para telas menores */
-        @media (max-width: 900px) {
-            .card {
-                width: calc(50% - 13px);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .card {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -159,117 +147,78 @@
         <p>Explore as glórias, os ídolos e a força da maior torcida do mundo!</p>
     </header>
 
-    <!-- CATEGORIA 1: TRADIÇÃO E GLÓRIAS -->
-    <section class="category-section">
-        <h2 class="category-title">🏆 Tradição e Glórias</h2>
-        <div class="gallery-container">
+    <main class="main-container">
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&auto=format&fit=crop" alt="Troféu e bola">
-                <div class="card-content">
-                    <div>
+        <!-- CATEGORIA 1: TRADIÇÃO E GLÓRIAS -->
+        <section class="category-section">
+            <h2 class="category-title">🏆 Tradição e Glórias</h2>
+            <div class="gallery-container">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&auto=format&fit=crop" alt="Troféu e campo">
+                    <div class="card-content">
                         <h3>O Mundial de 1981</h3>
-                        <p>O topo do mundo! Vitória histórica por 3 a 0 contra o Liverpool no Japão, sob o comando do Rei Zico.</p>
+                        <p>O topo do mundo! Vitória histórica por 3 a 0 contra o Liverpool no Japão.</p>
+                        <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                     </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&auto=format&fit=crop" alt="Campo de futebol">
-                <div class="card-content">
-                    <div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&auto=format&fit=crop" alt="Estádio iluminado">
+                    <div class="card-content">
                         <h3>Tricampeonato da Libertadores</h3>
-                        <p>As conquistas da América em 1981, 2019 e 2022 marcaram épocas inesquecíveis para toda a Nação.</p>
+                        <p>As conquistas da América em 1981, 2019 e 2022 marcaram gerações.</p>
+                        <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                     </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                 </div>
+
             </div>
+        </section>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=500&auto=format&fit=crop" alt="Estádio iluminado">
-                <div class="card-content">
-                    <div>
-                        <h3>Hegemonia Nacional</h3>
-                        <p>Dono de múltiplos títulos do Brasileirão e da Copa do Brasil, mantendo a tradição de vencedor.</p>
-                    </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-                </div>
-            </div>
+        <!-- CATEGORIA 2: A NAÇÃO RUBRO-NEGRA -->
+        <section class="category-section">
+            <h2 class="category-title">👥 A Nação Rubro-Negra</h2>
+            <div class="gallery-container">
 
-        </div>
-    </section>
-
-    <!-- CATEGORIA 2: A NAÇÃO RUBRO-NEGRA -->
-    <section class="category-section">
-        <h2 class="category-title">👥 A Nação Rubro-Negra</h2>
-        <div class="gallery-container">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=500&auto=format&fit=crop" alt="Festa na torcida">
-                <div class="card-content">
-                    <div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=500&auto=format&fit=crop" alt="Maracanã lotado">
+                    <div class="card-content">
                         <h3>O Templo do Maracanã</h3>
-                        <p>A energia das arquibancadas com mosaicos, sinalizadores e cantos que ecoam durante os 90 minutos.</p>
+                        <p>A energia das arquibancadas em dia de jogo empurra o time do início ao fim.</p>
+                        <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                     </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=500&auto=format&fit=crop" alt="Torcida reunida">
-                <div class="card-content">
-                    <div>
-                        <h3>Mais de 40 Milhões</h3>
-                        <p>Presente em cada canto do Brasil e do mundo, demonstrando a força da maior torcida do planeta.</p>
-                    </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?w=500&auto=format&fit=crop" alt="Bandeira ao vento">
-                <div class="card-content">
-                    <div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?w=500&auto=format&fit=crop" alt="Sinalizadores da torcida">
+                    <div class="card-content">
                         <h3>AeroFla</h3>
-                        <p>A tradicional recepção e despedida nos aeroportos antes das grandes decisões pelo continente.</p>
+                        <p>A tradicional recepção no aeroporto antes das grandes decisões do Mais Querido.</p>
+                        <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                     </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- CATEGORIA 3: ÍDOLOS MARCANTES -->
+        <section class="category-section">
+            <h2 class="category-title">⭐ Ídolos Marcantes</h2>
+            <div class="gallery-container">
 
-    <!-- CATEGORIA 3: ÍDOLOS E LENDAS -->
-    <section class="category-section">
-        <h2 class="category-title">⭐ Ídolos Especiais</h2>
-        <div class="gallery-container">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=500&auto=format&fit=crop" alt="Chute de futebol">
-                <div class="card-content">
-                    <div>
-                        <h3>Zico - O Galinho de Quintino</h3>
-                        <p>O maior camisa 10 da história do clube, maestro e líder da era de ouro dos anos 80.</p>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=500&auto=format&fit=crop" alt="Bola de futebol e chuteira">
+                    <div class="card-content">
+                        <h3>Zico - O Galinho</h3>
+                        <p>O maior camisa 10 da história do clube e líder absoluto da era de ouro.</p>
+                        <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                     </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=500&auto=format&fit=crop" alt="Jogador em campo">
-                <div class="card-content">
-                    <div>
-                        <h3>Gabi, Bruno Henrique e Arrascaeta</h3>
-                        <p>A trinca que marcou a era moderna com gols decisivos e uma parceria histórica no ataque.</p>
-                    </div>
-                    <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+    </main>
 
     <script>
         const botoesLike = document.querySelectorAll('.like-btn');
